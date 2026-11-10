@@ -161,37 +161,37 @@
 
   /* HERO */
   .hero{
-    min-height: 100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding-top: 60px; padding-bottom: 60px;
+    min-height: 100svh; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+    text-align:center; padding-top: 80px; padding-bottom: 60px;
     background:
       radial-gradient(ellipse 60% 40% at 15% 8%, rgba(195,154,62,0.13), transparent 60%),
       radial-gradient(ellipse 60% 40% at 85% 92%, rgba(156,90,80,0.10), transparent 60%),
       linear-gradient(rgba(251,243,234,0.72), rgba(251,243,234,0.72)),
       url('hero-bg.jpg') center/cover no-repeat;
   }
-  .hero-cross{ margin-bottom: 20px; }
+  .hero-cross{ margin-bottom: 5px; margin-top: 60px; }
   .hero-verse{
     font-family:'EB Garamond', serif; font-style:italic; color: var(--ink-soft);
-    max-width: 480px; font-size: 18px; line-height:1.7; margin: 6px 0 4px;
+    max-width: 480px; font-size: 18px; line-height:1.7; margin: 0 0 0 0;
   }
   .hero-verse-ref{ letter-spacing:0.3em; text-transform:uppercase; font-size:11px; color:var(--gold); font-style:normal; }
   .hero-names{
-    font-family:'Mrs Saint Delafield', cursive; font-size: clamp(52px, 11vw, 92px);
-    color: var(--rosewood); line-height:1.05; margin: 26px 0 10px;
+    font-family:'Cormorant Garamond', serif; font-size: clamp(52px, 11vw, 92px);
+    color: var(--rosewood); line-height:1.05; margin: 15px 0 8px; font-weight: 500; font-style: italic;
   }
   .hero-date{
     letter-spacing: 0.35em; text-transform:uppercase; font-size:13px; color: var(--ink-soft);
     margin-top: 4px;
   }
-  .hero-tag{ margin-top: 22px; font-style:italic; color: var(--rosewood-soft); font-size:16px; }
-  .scroll-cue{ margin-top: 46px; display:flex; flex-direction:column; align-items:center; gap:8px; }
-  .scroll-cue span{ letter-spacing:0.3em; text-transform:uppercase; font-size:10.5px; color:var(--ink-soft); }
-  .chev{ width:14px; height:14px; border-right:1.5px solid var(--gold); border-bottom:1.5px solid var(--gold); transform: rotate(45deg); animation: chevDown 1.8s ease-in-out infinite; }
+  .hero-tag{ margin-top: 12px; font-style:italic; color: var(--rosewood-soft); font-size:16px; }
+  .scroll-cue{ margin-top: 46px; display:flex; flex-direction:column; align-items:center; gap:8px; padding: 16px 24px; background: rgba(156, 90, 80, 0.15); border-radius: 50px; border: 1.5px solid rgba(195, 154, 62, 0.5); box-shadow: 0 2px 10px rgba(156, 90, 80, 0.1); }
+  .scroll-cue span{ letter-spacing:0.3em; text-transform:uppercase; font-size:11px; color:var(--rosewood); font-weight: 600; }
+  .chev{ width:16px; height:16px; border-right:2.5px solid var(--rosewood); border-bottom:2.5px solid var(--rosewood); transform: rotate(45deg); animation: chevDown 1.8s ease-in-out infinite; }
   @keyframes chevDown{ 0%,100%{ transform: translateY(0) rotate(45deg); opacity:.5;} 50%{ transform: translateY(6px) rotate(45deg); opacity:1;} }
 
 
   /* HERO EVENTS */
-  .hero-events{ margin-top: 26px; display:flex; flex-direction:column; gap:16px; align-items:center; }
+  .hero-events{ margin-top: 15px; display:flex; flex-direction:column; gap:12px; align-items:center; }
   .hero-event{ text-align:center; }
   .hero-event .he-title{ font-family:'Playfair Display', serif; font-size:19px; color: var(--rosewood); }
   .hero-event .he-meta{ font-style:italic; color: var(--ink-soft); font-size:16px; line-height:1.45; }
@@ -247,9 +247,9 @@
   .card .tag{ letter-spacing:0.28em; text-transform:uppercase; font-size:11px; color:var(--gold); }
   .card h3{ font-family:'Mrs Saint Delafield', cursive; font-size:36px; margin: 6px 0 18px; }
   .card-row{ display:flex; gap:12px; margin-bottom: 14px; align-items:flex-start; }
-  .card-row .ic{ font-size:17px; margin-top:2px; }
-  .card-row .t1{ font-family:'Playfair Display', serif; font-size:18px; color:var(--ink); }
-  .card-row .t2{ font-style:italic; color: var(--ink-soft); font-size:15.5px; }
+  .card-row .ic{ font-size:17px; margin-top:2px; flex-shrink: 0; width: 24px; height: 24px; }
+  .card-row .t1{ font-family:'Playfair Display', serif; font-size:18px; color:var(--ink); white-space: nowrap; }
+  .card-row .t2{ font-family:'EB Garamond', serif; font-style:normal; color: var(--ink-soft); font-size:16px; }
 
   /* VENUE */
   .venue{ text-align:center; background: var(--cream); }
@@ -296,7 +296,22 @@
   .closing .foot{ margin-top: 42px; letter-spacing:0.2em; font-size:11px; color: rgba(243,228,201,0.55); text-transform:uppercase; }
 
   @media (max-width: 600px){
-    section{ padding: 70px 7vw; }
+    section{ padding: 60px 6vw; }
+    .hero{ padding-top: 40px; padding-bottom: 40px; min-height: 100vh; }
+    .hero-cross{ margin-top: 40px; margin-bottom: 20px; }
+    .hero-cross img{ width: 110px !important; }
+    .hero-verse{ font-size: 15px; line-height: 1.6; max-width: 90%; margin: 0 0 0 0; }
+    .hero-verse-ref{ font-size: 10px; }
+    .hero-names{ font-size: clamp(38px, 9vw, 60px) !important; margin: 15px 0 8px; }
+    .hero-date{ font-size: 10px; letter-spacing: 0.25em; }
+    .hero-events{ margin-top: 18px; gap: 10px; }
+    .hero-event .he-title{ font-size: 16px; }
+    .hero-event .he-meta{ font-size: 13px; }
+    .hero-events .he-sep{ width: 6px; height: 6px; }
+    .hero-tag{ font-size: 13px; margin-top: 15px; }
+    .scroll-cue{ margin-top: 35px; padding: 12px 20px; }
+    .scroll-cue span{ font-size: 9px; }
+    .chev{ width: 12px; height: 12px; }
     .cards{ gap: 20px; }
     .card{ width: 100%; max-width: 340px; }
     .couple-row{ gap: 20px; }
@@ -407,9 +422,9 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-cross">
-      <img src="dove.png" alt="Two doves" style="width:160px; height:auto; display:block; margin:0 auto;">
+      <img src="dove.png" alt="Two doves" style="width:120px; height:auto; display:block; margin:0 auto;">
     </div>
-    <p class="hero-verse">“The Lord has made everything beautiful in His time.”<br>
+    <p class="hero-verse">“The Lord has made everything beautiful<br>in His time.”<br>
       <span class="hero-verse-ref">— Ecclesiastes 3:11</span>
     </p>
     <h1 class="hero-names">Sandra &amp; Kiran</h1>
@@ -476,14 +491,32 @@
       <div class="card">
         <div class="tag">Holy Betrothal</div>
         <h3>Betrothal</h3>
-        <div class="card-row"><span class="ic">📅</span><div><div class="t1">13th January 2027 — Wednesday</div><div class="t2">12:00 PM</div></div></div>
+        <div class="card-row">
+          <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px;">
+            <rect x="4" y="5" width="16" height="16" rx="2" fill="#FBF3EA" stroke="#9C5A50" stroke-width="2"/>
+            <line x1="4" y1="9" x2="20" y2="9" stroke="#9C5A50" stroke-width="2"/>
+            <line x1="8" y1="3" x2="8" y2="7" stroke="#9C5A50" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16" y1="3" x2="16" y2="7" stroke="#9C5A50" stroke-width="2" stroke-linecap="round"/>
+            <text x="12" y="17" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9C5A50" text-anchor="middle">13</text>
+          </svg>
+          <div><div class="t1">13th January 2027 — Wednesday</div><div class="t2">12:00 PM</div></div>
+        </div>
         <div class="card-row"><span class="ic">📍</span><div><div class="t1">St. Xavier's Forane Church</div><div class="t2">Karukutty, Angamaly</div></div></div>
       </div>
 
       <div class="card">
         <div class="tag">Join Us After</div>
         <h3>Betrothal Reception</h3>
-        <div class="card-row"><span class="ic">📅</span><div><div class="t1">13th January 2027 — Wednesday</div><div class="t2">12:30 PM · Reception &amp; Dining</div></div></div>
+        <div class="card-row">
+          <svg class="ic" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px;">
+            <rect x="4" y="5" width="16" height="16" rx="2" fill="#FBF3EA" stroke="#9C5A50" stroke-width="2"/>
+            <line x1="4" y1="9" x2="20" y2="9" stroke="#9C5A50" stroke-width="2"/>
+            <line x1="8" y1="3" x2="8" y2="7" stroke="#9C5A50" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16" y1="3" x2="16" y2="7" stroke="#9C5A50" stroke-width="2" stroke-linecap="round"/>
+            <text x="12" y="17" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9C5A50" text-anchor="middle">13</text>
+          </svg>
+          <div><div class="t1">13th January 2027 — Wednesday</div><div class="t2">12:30 PM · Reception &amp; Dining</div></div>
+        </div>
         <div class="card-row"><span class="ic">📍</span><div><div class="t1">LA Mirage - Wedding Venue</div><div class="t2">Koratty</div></div></div>
       </div>
     </div>
